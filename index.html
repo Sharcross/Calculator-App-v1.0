@@ -102,6 +102,39 @@ const current = parseFloat(currentOperand)
     }
     })})
 
+
+
+
+    buttonEqual.addEventListener('click', () =>  {
+    if (previous_operand_text.textContent.includes('/') || previous_operand_text.textContent.includes('*') || previous_operand_text.textContent.includes('+') || previous_operand_text.textContent.includes('-')) {
+            let result;
+const prev = parseFloat(previous_operand);
+const current = parseFloat(current_operand)
+            switch(current_operation) {
+                case '+':
+                    result = current + prev
+                break
+                case '-':
+                    result = prev - current
+                break
+                case '*':
+                    result = current * prev
+                break
+                case '/':
+                    result = prev / current
+                break
+                default:
+                break
+            }
+
+          current_operand_text.textContent = result;
+          current_operand = result;
+          previous_operand_text.textContent = ''
+        } else {
+            return
+        }
+})
+
     </script>
     
 
