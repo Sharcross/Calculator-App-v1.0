@@ -48,7 +48,14 @@
         let previous_operand_text = document.querySelector('.previous')
         let current_operand_text = document.querySelector('.current')
 
-        
+        function addNumber(button_number_par) {
+            buttonNumber.forEach(button_number_par => {
+                button_number_par.addEventListener('click', () => {
+                    if(button_number_par.textContent = '.' && current_operand_text.textContent.includes('.')) return
+                    current_operand_text.textContent += button_number_par.innerHTML
+                })
+            })
+        }
 
     </script>
     
