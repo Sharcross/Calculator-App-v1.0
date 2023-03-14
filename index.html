@@ -135,6 +135,17 @@ const current = parseFloat(currentOperand)
         }
 })
 
+
+
+buttonDelete.addEventListener('click', () => {
+    currentOperand = currentOperand.toString().slice(0, -1);
+    current_operand_text.textContent = currentOperand
+    console.log("The current is " + currentOperand)
+})
+
+clear.addEventListener('click', () => {
+    currentOperand = previousOperand = currentOperation = current_operand_text.textContent = previous_operand_text.textContent = ''
+})
     </script>
     
 
