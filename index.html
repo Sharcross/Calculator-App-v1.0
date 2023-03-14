@@ -41,7 +41,7 @@
         let currentOperation;
 
         const buttonNumber = document.querySelectorAll('[data-number]')
-        const buttonOPeration = document.querySelectorAll('[data-operation]')
+        const buttonOperation = document.querySelectorAll('[data-operation]')
         const buttonDelete = document.querySelector('[data-delete]')
         const buttonEqual = document.querySelector('[data-equal]')
         const clear = document.querySelector('[data-clear]')
@@ -62,13 +62,13 @@
 
 
 
-        button_operation.forEach(operation_button_par => {
+        buttonOperation.forEach(operation_button_par => {
     operation_button_par.addEventListener('click', () => {
         if (previous_operand_text.textContent.includes('/') || previous_operand_text.textContent.includes('*') || previous_operand_text.textContent.includes('+') || previous_operand_text.textContent.includes('-')) {
             let result;
-const prev = parseFloat(previous_operand);
-const current = parseFloat(current_operand)
-            switch(current_operation) {
+const prev = parseFloat(previousOperand);
+const current = parseFloat(currentOperand)
+            switch(currentOperation) {
                 case '+':
                     result = current + prev
                 break
@@ -87,18 +87,18 @@ const current = parseFloat(current_operand)
 
             previous_operand_text.textContent = result + operation_button_par.innerHTML;
             current_operand_text.textContent = ''
-            current_operand = ''
-            previous_operand = result;
-            current_operation = operation_button_par.textContent
+            currentOperand = ''
+            previousOperand = result;
+            currentOperation = operation_button_par.textContent
         }
         else {
 
 
-        previous_operand = current_operand;
-        current_operand = '';
-        previous_operand_text.textContent = previous_operand + operation_button_par.textContent;
+        previousOperand = currentOperand;
+        currentOperand = '';
+        previous_operand_text.textContent = previousOperand + operation_button_par.textContent;
         current_operand_text.textContent = ''
-        current_operation = operation_button_par.textContent;
+        currentOperation = operation_button_par.textContent;
     }
     })})
 
